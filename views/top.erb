@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <title>P1108</title>
+  </head>
+  <body>
+
+    <!-- headerは画面上部で固定 -->
+    <header class="container-fluid">
+      <div id="header-top" class="row">
+
+        <div id="header-list" class="col-8 col-sm-8 col-md-9 col-lg-10">
+          <ul>
+            <li><a href="#">Git Hub: コード閲覧</a></li>
+          </ul>
+        </div>
+
+        <div id="header-logo" class="col-4 col-sm-4 col-md-3 col-lg-2">
+          <a href="https://hidetonakasone.github.io/OriginalWebPage/">
+            <img src="./imgs/logo_2.png" alt="logo image">
+          </a>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 登録 -->
+
+    <form class="row" action="/save" method="post" enctype="multipart/form-data">
+
+      <label id="input_file" class="col-8">
+        <input class="co-10" type="file" name="up_img" required>
+        <i class="fas fa-file-upload fa-4x"></i>
+        <p>&emsp;ファイルのアップロード</p>
+      </label>
+
+      <label id="input_submit" class="col-2">
+        <input type="submit">
+        <span>送信</span>
+      </label>
+    </form>
+
+    <!-- 表示 -->
+
+    <div id="views" class="row">
+      <% @imgs_list.each do |row| %>
+        <div class="view col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+          <img src="/up-imgs/<%= row %>" class="view-img">
+        </div>
+      <% end %>
+    </div>
+
+    <footer>
+      &copy:2018 HEP!
+    </footer>
+
+  </body>
+</html>
