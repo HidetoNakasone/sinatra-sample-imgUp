@@ -31,33 +31,36 @@
 
     <!-- 登録 -->
 
-    <form class="row" action="/save" method="post" enctype="multipart/form-data">
+    <main class="container-fluid">
+      <form class="row" action="/save" method="post" enctype="multipart/form-data">
 
-      <label id="input_file" class="col-8">
-        <input class="co-10" type="file" name="up_img" required>
-        <i class="fas fa-file-upload fa-4x"></i>
-        <p>&emsp;ファイルのアップロード</p>
-      </label>
+        <label id="input_file" class="col-8">
+          <input class="co-10" type="file" name="up_img" required>
+          <i class="fas fa-file-upload fa-4x"></i>
+          <p>&emsp;ファイルのアップロード</p>
+        </label>
 
-      <label id="input_submit" class="col-2">
-        <input type="submit">
-        <span>送信</span>
-      </label>
-    </form>
+        <label id="input_submit" class="col-2">
+          <input type="submit">
+          <span>送信</span>
+        </label>
+      </form>
 
-    <!-- 表示 -->
+      <!-- 表示 -->
 
-    <div id="views" class="row">
-      <% @imgs_list.each do |row| %>
-        <div class="view col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-          <img src="/up-imgs/<%= row %>" class="view-img">
-        </div>
-      <% end %>
-    </div>
+      <div id="views" class="row">
+        <% @imgs_list.each do |row| %>
+          <div class="view col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <img src="/up-imgs/<%= row %>" class="view-img">
+          </div>
+        <% end %>
+      </div>
 
-    <footer>
-      &copy:2018 HEP!
-    </footer>
+      <footer>
+        &copy:2018 HEP!
+      </footer>
+
+    </main>
 
   </body>
 </html>
